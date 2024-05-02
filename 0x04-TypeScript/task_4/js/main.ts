@@ -1,14 +1,24 @@
-import * as CRUD from "crud";
-import { RowElement } from "./interface";
+import { Cpp } from "./subjects/Cpp";
+import { Java } from "./subjects/Java";
+import { React } from "./subjects/React";
+import { Teacher } from "./subjects/Teacher";
 
-const row: RowElement = {
-  firstName: "Guillaume",
-  lastName: "Salva",
-};
+export const cpp = new Cpp();
+export const java = new Java();
+export const react = new React();
+export const cTeacher: Teacher = { firstName: "John", lastName: "Doe", experienceTeachingC: 10 };
 
-const newRowID: RowID = CRUD.insertRow(row);
+console.log("C++");
+cpp.setTeacher(cTeacher);
+console.log(cpp.getRequirements());
+console.log(cpp.getAvailableTeacher());
 
-const updatedRow: RowElement = { ...row, age: 23 };
-CRUD.updateRow(newRowID, updatedRow);
+console.log("Java");
+java.setTeacher(cTeacher);
+console.log(java.getRequirements());
+console.log(java.getAvailableTeacher());
 
-CRUD.deleteRow(newRowID);
+console.log("React");
+react.setTeacher(cTeacher);
+console.log(react.getRequirements());
+console.log(react.getAvailableTeacher());
