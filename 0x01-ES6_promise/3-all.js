@@ -1,11 +1,13 @@
-import { uploadPhoto, createUser } from './utils'
+import { uploadPhoto, createUser } from './utils';
 
-function handleProfileSignup() {
-	uploadPhoto().then(response => {
-		createUser().then(response_1 => {
-			console.log(`${response.body} ${response_1.firstName} ${response_1.lastName}`);
-		})
-	});
+async function handleProfileSignup() {
+  try {
+    const photoResponse = await uploadPhoto();
+    const userResponse = await createUser();
+    console.log(`${photoResponse.body} ${userResponse.firstName} ${userResponse.lastName}`);
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
 
 export default handleProfileSignup;
