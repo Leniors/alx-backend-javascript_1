@@ -1,12 +1,12 @@
 // 3-payment.test.js
 
-// const { expect } = require('chai');
-let expect;
+const { expect } = require('chai');
+// let expect;
 
-before(async function() {
-const chai = await import('chai');
-expect = chai.expect;
-});
+// before(async function() {
+// const chai = await import('chai');
+// expect = chai.expect;
+// });
 const sinon = require('sinon');
 const sendPaymentRequestToApi = require('./3-payment');
 const Utils = require('./utils');
