@@ -1,15 +1,13 @@
 // 2-calcul_chai.test.js
 
+let expect;
+before(async function() {
+  const chai = await import('chai');
+  expect = chai.expect;
+});
 const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber', function() {
-  let expect;
-
-  before(async function() {
-    const chai = await import('chai');
-    expect = chai.expect;
-  });
-
   describe('SUM', function() {
     it('should round both numbers and return their sum', function() {
       expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6); // 1 + 5 = 6
