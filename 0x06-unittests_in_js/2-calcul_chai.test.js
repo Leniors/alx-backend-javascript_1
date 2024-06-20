@@ -1,10 +1,6 @@
 // 2-calcul_chai.test.js
 
-let expect;
-before(async function() {
-  const chai = await import('chai');
-  expect = chai.expect;
-});
+const { expect } = require('chai');
 const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber', function() {
