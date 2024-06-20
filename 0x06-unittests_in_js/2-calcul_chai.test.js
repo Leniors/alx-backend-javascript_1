@@ -1,6 +1,6 @@
 // 2-calcul_chai.test.js
 
-const { expect } = require('chai');
+const { expect } = require('/node_modules/chai/chai');
 const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber', function() {
